@@ -6,13 +6,17 @@
    
   </welcome-file-list>
   
-  <servlet>
-    <servlet-name>GeneralReport</servlet-name>
-    <servlet-class>Beans.GeneralReport</servlet-class>
+ 
+    <servlet>
+    <description></description>
+    <display-name>Controller</display-name>
+    <servlet-name>Controller</servlet-name>
+    <servlet-class>Control.Controller</servlet-class>
   </servlet>
-   <servlet-mapping>
-    <servlet-name>GeneralReport</servlet-name>
-    <url-pattern>/GeneralReport</url-pattern>
+  <servlet-mapping>
+    <servlet-name>Controller</servlet-name>
+    <url-pattern>/</url-pattern>
   </servlet-mapping>
+
   
 </web-app>
