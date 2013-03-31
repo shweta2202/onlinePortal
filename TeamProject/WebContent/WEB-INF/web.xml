@@ -5,4 +5,14 @@
     <welcome-file>jsp/Home.jsp</welcome-file>
    
   </welcome-file-list>
+  
+  <servlet>
+    <servlet-name>GeneralReport</servlet-name>
+    <servlet-class>Beans.GeneralReport</servlet-class>
+  </servlet>
+   <servlet-mapping>
+    <servlet-name>GeneralReport</servlet-name>
+    <url-pattern>/GeneralReport</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
