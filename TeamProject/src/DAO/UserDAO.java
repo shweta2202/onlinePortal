@@ -16,7 +16,7 @@ public class UserDAO {
 		String user= object.getUserId();
 		
 		String pass=object.getPass();
-		String type=object.getType();
+		String type=object.getType();  // Dont think this is necessary
 		Connection con=ob.connect();
 		int flag=0;
 
@@ -37,11 +37,16 @@ public class UserDAO {
          while(rs.next())
          {
         	 String pwd= rs.getString(1);
-        	 String Type=rs.getString(2);  //Have to include check for type
+        	 String tp=rs.getString(2);  //Have to include check for type
         	  System.out.println(pwd);                             //Necessary for Sprint 2
         	 if(pass.equals(pwd))
-        	 {
-        		 flag=1;
+        	 { 
+        		 if(tp.equals("user"))
+        	     flag=1;
+        		 if( tp.equals("admin"))
+        	     flag=2;
+        		 if ( tp.equals("cop"))
+        			 flag = 3;
         	 }
         	
          }

@@ -68,12 +68,24 @@ public class Controller extends HttpServlet {
 			ob.setUserId(user);
 			int flag=userD.verify(ob);
 			
-			if(flag==1)
+			if(flag==3)
 			{    request.setAttribute("ses",user );
 				rd=request.getRequestDispatcher("/jsp/afterLogin.jsp");
 				rd.forward(request,response);
 				
 			}
+			else if(flag==2)  // Micheal and ankita admin here
+			{
+				request.setAttribute("ses",user );
+				rd=request.getRequestDispatcher("/jsp/AdminHome.jsp");
+				rd.forward(request,response);
+			}
+			else if(flag==1)
+			{      // For Sonal part
+				  //write here 
+				
+			}
+			
 			else
 			{	
 				rd=request.getRequestDispatcher("/jsp/Error.jsp");
@@ -157,6 +169,13 @@ public class Controller extends HttpServlet {
 		     rd.forward(request,response);
 			
 		}
+		if (check==10)
+		{
+			rd=request.getRequestDispatcher("/jsp/GeneralReport.jsp");
+			rd.forward(request,response);
+			
+		}
+
     	
 	}
 }
